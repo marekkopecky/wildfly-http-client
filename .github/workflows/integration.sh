@@ -7,6 +7,9 @@ git clone --depth=1 https://github.com/wildfly/ejb-client-testsuite
 
 cd ejb-client-testsuite
 
+echo mvn -B -ntp package -DspecificModule=prepare -Dhttp.client.repository=${WILDFLY_HTTP_REPOSITORY} -Dhttp.client.branch=${WILDFLY_HTTP_BRANCH}
+echo "_____"
+echo "_____"
 mvn -B -ntp package -DspecificModule=prepare -Dhttp.client.repository=${WILDFLY_HTTP_REPOSITORY} -Dhttp.client.branch=${WILDFLY_HTTP_BRANCH}
 mvn -B -ntp dependency:tree clean verify --fail-at-end
 
